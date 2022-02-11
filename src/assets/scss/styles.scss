@@ -174,29 +174,33 @@ ul.breadcrumb {
     }
 
     .form-control {
-        border-radius: 30px;
 
     }
 }
 
-.btn {
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-size: 14px;
+// .btn {
+//     border-radius: 30px;
+//     text-transform: uppercase;
+//     font-size: 14px;
 
-    @media screen and (min-width: 768px) {
-        font-size: 16px;
+//     @media screen and (min-width: 768px) {
+//         font-size: 16px;
 
         
-    }
-}
+//     }
+// }
 
-.btn-primary {
-    background-color: var(--colo-green);
-    border-color: var(--colo-green);
+// .btn-primary {
+//     background-color: var(--colo-green);
+//     border-color: var(--colo-green);
 
-    &:hover, &:active {
-        background-color: var(--colo-green);
-        border-color: var(--colo-green);
-    }
+//     &:hover, &:active {
+//         background-color: var(--colo-green);
+//         border-color: var(--colo-green);
+//     }
+// }
+
+.btn {
+    color: #fff;
+
 }

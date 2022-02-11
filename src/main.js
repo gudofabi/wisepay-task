@@ -5,8 +5,9 @@ import store from './store'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/scss/main.scss';
+import Vuelidate from 'vuelidate'
 
-
+Vue.use(Vuelidate)
 Vue.config.productionTip = false
 
 new Vue({

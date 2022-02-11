@@ -21,11 +21,22 @@ const actions = {
 
         commit('setCompany', state.company);
 
+    },
+
+    updateCompany({commit}, company) {
+
+        commit('updateCompany', company);
+        
     }
 }
 
 const mutations = {
-    setCompany: (state, company) => { state.company = company }
+    setCompany: (state, company) => { state.company = company },
+
+    updateCompany: (state, company) => {
+        state.company.email = company.email;
+        state.company.password = company.password;
+    }
 }
 
 
