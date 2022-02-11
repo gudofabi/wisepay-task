@@ -1,4 +1,4 @@
-# gday-coding-challenge
+# wisepay-coding-challenge
 
 ## Project setup
 ```
@@ -22,4 +22,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-"# gday-landing-page" 
+"# wisepay-landing-page" 
