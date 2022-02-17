@@ -44,9 +44,8 @@
                         </li>
                     </ul>
                 </div>
-                <button class="btn  float-right" 
-                    :class="[!$v.form.email.$dirty || !$v.form.password.$dirty ? 'btn-secondary' : 'btn-primary']" 
-                    :disabled="!$v.form.email.$dirty || !$v.form.password.$dirty"
+                <button class="btn btn-primary float-right"
+                    :disabled="!$v.form.$anyDirty"
                     @click="func_submit"
                 >Save</button>
                     
