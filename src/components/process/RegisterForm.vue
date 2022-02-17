@@ -44,7 +44,7 @@
                         </li>
                     </ul>
                 </div>
-                <button class="btn btn-primary float-right" @click="func_submit">Save</button>
+                <a class="btn btn-primary float-right" @click="func_submit">Save</a>
             </div>
       </div>
   </div>
@@ -52,6 +52,7 @@
 
 <script>
 import { required, minLength, email, maxLength, helpers } from 'vuelidate/lib/validators'
+import { mapActions, mapGetters } from 'vuex';
 const uppercase = helpers.regex('uppercase', /[A-Z]/);
 const lowercase = helpers.regex('lowercase', /[a-z]/);
 const numeric = helpers.regex('numerice', /[0-9]/)
@@ -80,6 +81,12 @@ export default {
         }
     },
 
+    computed: {
+
+        ...mapGetters({ getCompany: "getCompany" })
+
+    },
+
     watch: {
         form: {
             deep: true,
@@ -93,7 +100,21 @@ export default {
     },
 
     methods: {
+        ...mapActions({
+            updateSteps: "updateSteps",
+            updateCompany: "updateCompany",
+            fetchCompany: "fetchCompany"
+        }),
         func_submit() {
+            const $step = {
+                step: 2,
+                name: 'Create Password',
+                inprogress: true,
+                passed: true
+            };
+
+            this.updateSteps($step);
+            this.updateCompany(this.form);
             console.log(this.form);
         }
     }

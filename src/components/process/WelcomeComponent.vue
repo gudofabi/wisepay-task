@@ -53,7 +53,7 @@
             </li>
         </ul>
 
-        <button class="btn btn-primary" @click.prevent="func_createAccount">Create an Account</button>
+        <a class="btn btn-primary" @click="func_createAccount()">Create an Account</a>
       </div>
   </div>
 </template>
