@@ -8,12 +8,12 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input v-model="$v.form.email.$model" class="form-control" type="email" id="email" placeholder="payer@gmail.com">
-                    <div class="error" v-if="!$v.form.email.required && $v.form.email.$dirty">Field is required</div>
-                    <div class="error" v-if="!$v.form.email.email && $v.form.email.$dirty">Field is must be email</div>
+                    <div class="error" v-if="!$v.form.email.required && $v.form.email.$error">Field is required</div>
+                    <div class="error" v-if="!$v.form.email.email && $v.form.email.$error">Field is must be email</div>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input v-model="$v.form.password.$model" class="form-control" type="text" id="password" placeholder="Password">
+                    <input v-model="$v.form.password.$model" class="form-control" type="password" id="password" placeholder="Password">
                 </div>
                 <div class="password-validation">
                     <p>Password must contain:</p>
@@ -44,7 +44,12 @@
                         </li>
                     </ul>
                 </div>
-                <a class="btn btn-primary float-right" @click="func_submit">Save</a>
+                <button class="btn  float-right" 
+                    :class="[!$v.form.email.$dirty || !$v.form.password.$dirty ? 'btn-secondary' : 'btn-primary']" 
+                    :disabled="!$v.form.email.$dirty || !$v.form.password.$dirty"
+                    @click="func_submit"
+                >Save</button>
+                    
             </div>
       </div>
   </div>
@@ -115,7 +120,7 @@ export default {
 
             this.updateSteps($step);
             this.updateCompany(this.form);
-            console.log(this.form);
+            alert('Finish!!!');
         }
     }
 }
